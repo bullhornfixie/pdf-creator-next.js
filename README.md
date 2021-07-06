@@ -1,9 +1,9 @@
 # PDF Creator on Next.JS 
 
 This code base shows you how to:
-- Create a PDF template in HTML
-- Convert HTML to a PDF document 
-- Render PDF in browser and download 
+- Create a PDF template in HTML <br>
+- Convert HTML to a PDF document <br>
+- Render PDF in browser and download <br>
 
 ## Getting Started
 
