@@ -1,19 +1,25 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { Box, Flex, Text } from 'rebass'
+// import styles from '../styles/Home.module.css'
+import ReactPDF, { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import PDFLink from '../components/pdfCreator'
+import Flex from 'rebass'
+import { PDFViewer } from '@react-pdf/renderer'
+import MyDocument from '../components/pdfCreator'
+import { useEffect } from 'react';
+import MyApp from './App'
+import dynamic from 'next/dynamic'
+const pdfDocument = dynamic(() => import('../components/pdfCreator'), {
+  ssr: false,
+})
 
-const Home = () => { 
-  return (
-    <Flex
-      width='100%'
-      height='10vh'
-      bg='black'
-      justifyContent='center'
-    > 
-     <Text color='white' size='20px'>PDF Maker </Text>
-    </Flex>
-  )
-}
+// ssr means server side rendering - you want this component rendering client side 
 
-export default Home 
+const Home = () => (
+  <pdfDocument height="900vh"> 
+    <MyDocument />
+  </pdfDocument>
+
+)
+
+export default Home
