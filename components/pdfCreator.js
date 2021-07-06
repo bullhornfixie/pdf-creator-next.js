@@ -1,14 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
-import { Document, Page, Text, View, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 
 // Create styles
 const styles = StyleSheet.create({
   page: {
     justifyContent: 'center',
-    flexDirection: 'column',
-    backgroundColor: '#E4E4E4'
+    flexDirection: 'row',
+    backgroundColor: '#FFFFFF'
   },
   section: {
     margin: 10,
@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const pdfDocument = () => (
+const PDFDocument = () => {
+  return (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.section}>
@@ -29,6 +30,15 @@ const pdfDocument = () => (
       </View>
     </Page>
   </Document>
+  )
+}
+
+const Output = () => (
+  <>
+  <PDFViewer height='900vh' width='1200vh'>
+     <PDFDocument />
+  </PDFViewer>
+</>
 )
 
-export default pdfDocument
+export default Output

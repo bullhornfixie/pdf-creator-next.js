@@ -5,21 +5,17 @@ import ReactPDF, { Document, Page, Text, View, StyleSheet } from '@react-pdf/ren
 import PDFLink from '../components/pdfCreator'
 import Flex from 'rebass'
 import { PDFViewer } from '@react-pdf/renderer'
-import MyDocument from '../components/pdfCreator'
 import { useEffect } from 'react';
 import MyApp from './App'
 import dynamic from 'next/dynamic'
-const pdfDocument = dynamic(() => import('../components/pdfCreator'), {
+const Output = dynamic(() => import('../components/pdfCreator'), {
   ssr: false,
 })
 
 // ssr means server side rendering - you want this component rendering client side 
 
-const Home = () => (
-  <pdfDocument height="900vh"> 
-    <MyDocument />
-  </pdfDocument>
-
+const PDFView= () => (
+    <Output/>
 )
 
-export default Home
+export default PDFView
