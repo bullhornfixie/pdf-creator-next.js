@@ -7,8 +7,9 @@ import { Document, Page, Text, View, StyleSheet, PDFDownloadLink, PDFViewer } fr
 const styles = StyleSheet.create({
   page: {
     justifyContent: 'center',
-    flexDirection: 'row',
-    backgroundColor: '#FFFFFF'
+    flexDirection: 'column',
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center'
   },
   section: {
     margin: 10,
