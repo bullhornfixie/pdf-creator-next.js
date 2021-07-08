@@ -3,53 +3,64 @@ import Head from 'next/head'
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
 import { colors, sizes, font } from '../styles/variables'
-import Logo from '../public/random.jpg'
-
-console.log(Logo.src)
+import Signature from '../public/signature.png'
+import Banner from '../public/banner.png'
 
 // Create styles
 const styles = StyleSheet.create({
   page: {
-    justifyContent: 'center',
     flexDirection: 'column',
     backgroundColor: `${colors.white}`,
   },
   section: {
     margin: 10,
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingHorizontal: 70,
+    paddingTop: 50,
+    // paddingBottom: 10,
+    paddingHorizontal: 10,
     float: 'left',
     textAlign: 'center',
     // borderRadius: 0,
     // borderWidth: 1.5,
     // borderColor: '#D7D8D6',
   },
-  body1: {
+  header: {
     fontSize: 14,
-    marginBottom: 30,
+    marginBottom: 35,
     marginTop: 10,
   },
-  body2: {
-    fontSize: 30,
-    marginBottom: 30,
+  paragraph: {
+    fontSize: 12,
+    marginBottom: 35,
+    marginLeft: 140,
+    marginRight: 140
+  },
+  name: {
+    fontSize: 48,
+    marginBottom: 35,
     color: '#6236FF',
   },
-  body3: {
+  athlete: {
+    fontSize: 24,
+    marginBottom: 35,
+    color: '#6236FF',
+  },
+  text2: {
     fontSize: 12,
-    marginBottom: 30,
-    // marginLeft: 140,
-    // marginRight: 140,
-    // textAlign: 'center'
+    marginBottom: 15,
+  },
+  text3: {
+    fontSize: 12,
+    marginBottom: 15,
   },
   image: {
-    marginBottom: 25,
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    height: 120,
+    marginBottom: 35,
+    height: 'auto',
+    width: 'auto',
+
+  },
+  signature: {
     width: 120,
-    display: 'block',
-    backgroundColor: `${colors.black}`,
+    height: 70,
   }
 });
 
@@ -63,15 +74,17 @@ const PDFDocument = ({image}) => {
       <Page size="A4" style={styles.page}>
         <View style={styles.section} >
           <Text>.......................</Text>
-          <Text style={styles.body1}>THIS IS TO CERTIFY THAT</Text>
-          <Text style={styles.body2}>{name}</Text>
-          <Text style={styles.body3}>Has successfully created an Interglatic Athlete in the pursuit of challenging planet X-R23's Dream Team.</Text>
+          <Text style={styles.header}>THIS IS TO CERTIFY THAT</Text>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.paragraph}>Has successfully created an Interglatic Athlete in the pursuit of challenging planet X-R23's Dream Team.</Text>
           <Text>.......................</Text>
-          <Text style={styles.body1}>CALLED</Text>
-          <Text style={styles.body2}>{athlete}</Text>
-          <Text style={styles.body3}>Your effort will now help Earth complete in the ultimate match.</Text>
-          <Text style={styles.body3}>Sincerely, thank you.</Text>
-          <Image style={styles.image} src={Logo.src}></Image>
+          <Text style={styles.header}>CALLED</Text>
+          <Text style={styles.athlete}>{athlete}</Text>
+          <Text style={styles.text2}>Your effort will now help Earth complete in the ultimate match.</Text>
+          <Text style={styles.text3}>Sincerely, thank you.</Text>
+          <Image style={styles.signature} src={Signature.src} />
+          <Text>..............................................................................................................</Text>
+          <Image style={styles.image} src={Banner.src} />
         </View>   
       </Page>
     </Document>
