@@ -3,9 +3,9 @@ import Head from 'next/head'
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
 import { colors, sizes, font } from '../styles/variables'
-import Logo from '../public/certify.png'
+import Logo from '../public/random.jpg'
 
-console.log({Logo})
+console.log(Logo.src)
 
 // Create styles
 const styles = StyleSheet.create({
@@ -13,18 +13,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'column',
     backgroundColor: `${colors.white}`,
-    alignItems: 'center'
   },
   section: {
     margin: 10,
-    paddingTop: 55,
-    paddingBottom: 55,
+    paddingTop: 10,
+    paddingBottom: 10,
     paddingHorizontal: 70,
     float: 'left',
     textAlign: 'center',
-    borderRadius: 0,
-    borderWidth: 1.5,
-    borderColor: '#D7D8D6',
+    // borderRadius: 0,
+    // borderWidth: 1.5,
+    // borderColor: '#D7D8D6',
   },
   body1: {
     fontSize: 14,
@@ -63,6 +62,7 @@ const PDFDocument = ({image}) => {
     <Document> 
       <Page size="A4" style={styles.page}>
         <View style={styles.section} >
+          <Text>.......................</Text>
           <Text style={styles.body1}>THIS IS TO CERTIFY THAT</Text>
           <Text style={styles.body2}>{name}</Text>
           <Text style={styles.body3}>Has successfully created an Interglatic Athlete in the pursuit of challenging planet X-R23's Dream Team.</Text>
@@ -71,7 +71,7 @@ const PDFDocument = ({image}) => {
           <Text style={styles.body2}>{athlete}</Text>
           <Text style={styles.body3}>Your effort will now help Earth complete in the ultimate match.</Text>
           <Text style={styles.body3}>Sincerely, thank you.</Text>
-          <Image style={styles.image} cache={false} src={Logo}></Image>
+          <Image style={styles.image} src={Logo.src}></Image>
         </View>   
       </Page>
     </Document>
