@@ -2,7 +2,7 @@ import Head from 'next/head'
 // import styles from '../styles/Home.module.css'
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
-import { colors, sizes, font } from '../styles/variables'
+import { colors, sizes, font, pdf } from '../styles/variables'
 import Signature from '../public/signature.png'
 import Banner from '../public/banner.png'
 
@@ -13,47 +13,47 @@ const styles = StyleSheet.create({
     backgroundColor: `${colors.white}`,
   },
   section: {
-    margin: 10,
+    margin: 15,
     paddingTop: 50,
-    // paddingBottom: 10,
+    // paddingBottom: 50,
     paddingHorizontal: 10,
     float: 'left',
     textAlign: 'center',
-    // borderRadius: 0,
-    // borderWidth: 1.5,
-    // borderColor: '#D7D8D6',
+    borderRadius: 0,
+    borderWidth: 1.5,
+    borderColor: '#D7D8D6',
   },
   header: {
-    fontSize: 14,
-    marginBottom: 35,
+    fontSize: `${sizes.sm}`,
+    marginBottom: `${sizes.lg}`,
     marginTop: 10,
-  },
-  paragraph: {
-    fontSize: 12,
-    marginBottom: 35,
-    marginLeft: 140,
-    marginRight: 140
   },
   name: {
     fontSize: 48,
-    marginBottom: 35,
+    marginBottom: `${sizes.lg}`,
     color: '#6236FF',
   },
   athlete: {
     fontSize: 24,
-    marginBottom: 35,
+    marginBottom: `${sizes.lg}`,
     color: '#6236FF',
   },
+  text1: {
+    fontSize: `${sizes.xs}`,
+    marginBottom: `${sizes.lg}`,
+    marginLeft: 135,
+    marginRight: 135,
+  },
   text2: {
-    fontSize: 12,
-    marginBottom: 15,
+    fontSize: `${sizes.xs}`,
+    marginBottom: `${sizes.md}`,
   },
   text3: {
-    fontSize: 12,
-    marginBottom: 15,
+    fontSize: `${sizes.xs}`,
+    marginBottom: `${sizes.md}`,
   },
   image: {
-    marginBottom: 35,
+    marginBottom: `${sizes.lg}`,
     height: 'auto',
     width: 'auto',
 
@@ -76,7 +76,7 @@ const PDFDocument = ({image}) => {
           <Text>.......................</Text>
           <Text style={styles.header}>THIS IS TO CERTIFY THAT</Text>
           <Text style={styles.name}>{name}</Text>
-          <Text style={styles.paragraph}>Has successfully created an Interglatic Athlete in the pursuit of challenging planet X-R23's Dream Team.</Text>
+          <Text style={styles.text1}>Has successfully created an Interglatic Athlete in the pursuit of challenging planet X-R23's Dream Team.</Text>
           <Text>.......................</Text>
           <Text style={styles.header}>CALLED</Text>
           <Text style={styles.athlete}>{athlete}</Text>
