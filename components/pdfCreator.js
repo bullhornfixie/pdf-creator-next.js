@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
 import { colors, sizes, font } from '../styles/variables'
-import Logo from './vercel.svg'
+import Logo from './loooogo.jpg'
 
 // Create styles
 const styles = StyleSheet.create({
@@ -62,7 +62,6 @@ const PDFDocument = ({image}) => {
           <Text style={styles.body3}>Your effort will now help Earth complete in the ultimate match.</Text>
           <Text style={styles.body3}>Sincerely, thank you.</Text>
           <Image style={styles.image} src="http://static.donquijote.org/images/blogs/dq-reg/don-quijote-de-la-mancha.jpg" alt="image" />
-          <Image src={image} style={styles.image} />
         </View>   
       </Page>
     </Document>
