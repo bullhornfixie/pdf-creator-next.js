@@ -2,7 +2,7 @@ import Head from 'next/head'
 // import styles from '../styles/Home.module.css'
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
-import { colors, sizes, font, pdf } from '../styles/variables'
+import { colors, sizes, font } from '../styles/variables'
 import Signature from '../public/signature.png'
 import Banner from '../public/banner.png'
 
