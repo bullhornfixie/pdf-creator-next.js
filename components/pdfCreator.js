@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   section: {
     margin: 15,
-    paddingTop: 20,
+    paddingTop: 36,
     paddingHorizontal: 10,
     textAlign: 'center',
     // borderRadius: 0,
@@ -37,23 +37,20 @@ const styles = StyleSheet.create({
     fontFamily: 'GoshaSans-Bold',
     marginBottom: `${sizes.lg}`,
     color: '#5130D1',
-    // Goshasands bold 
   },
   athlete: {
     fontSize: 24,
     fontFamily: 'GoshaSans-Bold',
     marginBottom: `${sizes.lg}`,
     color: '#5130D1',
-    // Goshasands bold 
   },
   text1: {
     fontSize: `${sizes.xs}`,
     fontFamily: 'ObjectSans-Regular',
     marginBottom: `${sizes.lg}`,
     lineHeight: 1.5,
-    marginLeft: 135,
-    marginRight: 135,
-    // ObjectSans-Regular
+    marginLeft: 110,
+    marginRight: 110,
   },
   text2: {
     fontSize: `${sizes.xs}`,
