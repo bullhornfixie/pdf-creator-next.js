@@ -3,6 +3,9 @@ import { PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
 import { colors, sizes, font } from '../styles/variables'
 import Signature from '../public/signature.png'
 import Banner from '../public/banner.png'
+// import Design from '../styles/design.png'
+// import Banner2 from '../public/classified.png'
+// import Dots from '../public/dots1.jpg'
 
 const styles = StyleSheet.create({
   page: {
@@ -11,13 +14,13 @@ const styles = StyleSheet.create({
   },
   section: {
     margin: 15,
-    paddingTop: 50,
+    paddingTop: 39,
     // paddingBottom: 50,
     paddingHorizontal: 10,
     textAlign: 'center',
-    borderRadius: 0,
-    borderWidth: 1.5,
-    borderColor: '#D7D8D6',
+    // borderRadius: 0,
+    // borderWidth: 1.5,
+    // borderColor: '#D7D8D6',
   },
   header: {
     fontSize: `${sizes.sm}`,
@@ -28,12 +31,13 @@ const styles = StyleSheet.create({
   name: {
     fontSize: `${sizes.xxl}`,
     marginBottom: `${sizes.lg}`,
-    color: '#6236FF',
+    color: '#5130D1',
+    // Helvetica, normal, 50
   },
   athlete: {
     fontSize: 24,
     marginBottom: `${sizes.lg}`,
-    color: '#6236FF',
+    color: '#5130D1',
   },
   text1: {
     fontSize: `${sizes.xs}`,
@@ -59,6 +63,17 @@ const styles = StyleSheet.create({
     fontSize: `${sizes.xs}`,
     lineHeight: 1.5,
   },
+  text6: {
+    fontSize: `${sizes.md}`,
+    textTransform: 'uppercase',
+  },
+  text7: {
+    fontSize: 8,
+    textTransform: 'uppercase',
+    color: `${colors.white}`,
+    marginTop: 8,
+    marginBottom: 8,
+  },
   container: {
     flexDirection: 'row',
     width: '100%',
@@ -79,15 +94,32 @@ const styles = StyleSheet.create({
       paddingRight: 25,
       textAlign: 'left',
     },
-  banner: {
-    marginBottom: `${sizes.lg}`,
+  image: {
+    marginTop: `${sizes.sm}`,
+    marginBottom: `${sizes.sm}`,
     height: 'auto',
     width: 'auto',
   },
   signature: {
     width: 150,
     height: 100,
-  }
+  },
+  classifiedBanner: {
+    flexDirection: 'row',
+    width: '100%',
+    minHeight: 10,
+    backgroundColor: '#FBEC1A',
+    textAlign: 'center',
+    // Helvetica, regular, 68 
+  },
+  onlyShareBanner: {
+    flexDirection: 'row',
+    width: '100%',
+    minHeight: 10,
+    backgroundColor: '#181818',
+    textAlign: 'center',
+    // Helvetica, normal, 18
+  },
 });
 
 const name = 'Tamara-Drew'
@@ -117,7 +149,13 @@ const PDFDocument = ({image}) => {
             </View>
           </View>
           <Text>..............................................................................................................</Text>
-          <Image style={styles.banner} src={Banner.src} />
+          <Image style={styles.image} src={Banner.src} />
+        </View> 
+        <View style={styles.classifiedBanner}>
+          <Text style={styles.text6}>- Classified Certification -</Text>
+        </View>
+        <View style={styles.onlyShareBanner}>
+          <Text style={styles.text7}>! / Only Share With Friends {'>'} /</Text>
         </View>
       </Page>
     </Document>
