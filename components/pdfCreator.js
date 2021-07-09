@@ -3,10 +3,6 @@ import { PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
 import { colors, sizes, font } from '../styles/variables'
 import Signature from '../public/signature.png'
 import Banner from '../public/banner.png'
-// import Design from '../styles/design.png'
-// import Banner2 from '../public/classified.png'
-// import Dots from '../public/dots1.jpg'
-import Blur from '../public/greyOval.png'
 import GoshaBold from '../public/fonts/GoshaSans-Bold.otf';
 import ObjectSans from '../public/fonts/ObjectSans-Regular.otf';
 
