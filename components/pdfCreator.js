@@ -1,4 +1,4 @@
-import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image, Font} from '@react-pdf/renderer';
 import { PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
 import { colors, sizes, font } from '../styles/variables'
 import Signature from '../public/signature.png'
@@ -6,16 +6,19 @@ import Banner from '../public/banner.png'
 // import Design from '../styles/design.png'
 // import Banner2 from '../public/classified.png'
 // import Dots from '../public/dots1.jpg'
+import Blur from '../public/greyOval.png'
+import GoshaBold from '../public/fonts/GoshaSans-Bold.otf';
+import ObjectSans from '../public/fonts/ObjectSans-Regular.otf';
 
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
     backgroundColor: `${colors.white}`,
+
   },
   section: {
     margin: 15,
-    paddingTop: 39,
-    // paddingBottom: 50,
+    paddingTop: 20,
     paddingHorizontal: 10,
     textAlign: 'center',
     // borderRadius: 0,
@@ -24,51 +27,63 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: `${sizes.sm}`,
+    fontFamily: 'ObjectSans-Regular',
     textTransform: 'uppercase',
     marginBottom: `${sizes.lg}`,
     marginTop: `${sizes.sm}`,
   },
   name: {
     fontSize: `${sizes.xxl}`,
+    fontFamily: 'GoshaSans-Bold',
     marginBottom: `${sizes.lg}`,
     color: '#5130D1',
-    // Helvetica, normal, 50
+    // Goshasands bold 
   },
   athlete: {
     fontSize: 24,
+    fontFamily: 'GoshaSans-Bold',
     marginBottom: `${sizes.lg}`,
     color: '#5130D1',
+    // Goshasands bold 
   },
   text1: {
     fontSize: `${sizes.xs}`,
+    fontFamily: 'ObjectSans-Regular',
     marginBottom: `${sizes.lg}`,
     lineHeight: 1.5,
     marginLeft: 135,
     marginRight: 135,
+    // ObjectSans-Regular
   },
   text2: {
     fontSize: `${sizes.xs}`,
+    fontFamily: 'ObjectSans-Regular',
     marginBottom: `${sizes.md}`,
   },
   text3: {
     fontSize: `${sizes.xs}`,
+    fontFamily: 'ObjectSans-Regular',
     marginBottom: `${sizes.md}`,
   },
   text4: {
     fontSize: `${sizes.sm}`,
+    fontFamily: 'ObjectSans-Regular',
     lineHeight: 1.5,
     marginBottom: `${sizes.sm}`
   },
   text5: {
     fontSize: `${sizes.xs}`,
+    fontFamily: 'ObjectSans-Regular',
     lineHeight: 1.5,
   },
   text6: {
     fontSize: `${sizes.md}`,
+    fontFamily: 'ObjectSans-Regular',
     textTransform: 'uppercase',
   },
   text7: {
     fontSize: 8,
+    fontFamily: 'ObjectSans-Regular',
     textTransform: 'uppercase',
     color: `${colors.white}`,
     marginTop: 8,
@@ -91,7 +106,7 @@ const styles = StyleSheet.create({
     rightColumn: {
       flexDirection: 'column',
       width: '50%',
-      paddingRight: 25,
+      paddingRight: 10,
       textAlign: 'left',
     },
   image: {
@@ -118,12 +133,14 @@ const styles = StyleSheet.create({
     minHeight: 10,
     backgroundColor: '#181818',
     textAlign: 'center',
-    // Helvetica, normal, 18
   },
 });
 
 const name = 'Tamara-Drew'
 const athlete = 'Battlestar CP3-0 Hockey Player'
+
+Font.register({ family: 'GoshaSans-Bold', src: GoshaBold })
+Font.register({ family: 'ObjectSans-Regular', src: ObjectSans })
 
 const PDFDocument = ({image}) => {
   return (
@@ -150,7 +167,9 @@ const PDFDocument = ({image}) => {
           </View>
           <Text>..............................................................................................................</Text>
           <Image style={styles.image} src={Banner.src} />
+          {/* <Image style={styles.oval} src={Blur.src} /> */}
         </View> 
+
         <View style={styles.classifiedBanner}>
           <Text style={styles.text6}>- Classified Certification -</Text>
         </View>

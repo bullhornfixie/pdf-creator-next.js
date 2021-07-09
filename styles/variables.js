@@ -55,7 +55,7 @@ const coverImage = {
 
 const font = {
   family: {
-    body: 'DM Sans, Arial, sans-serif',
+    body: 'Helvetica, Arial, sans-serif',
     heading: 'DM Sans, Arial, sans-serif',
     mono: 'Inconsolata, monospace',
     custom: 'Dollie',
