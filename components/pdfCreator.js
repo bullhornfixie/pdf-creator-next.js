@@ -17,11 +17,12 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     // paddingBottom: 50,
     paddingHorizontal: 10,
-    float: 'left',
     textAlign: 'center',
     borderRadius: 0,
     borderWidth: 1.5,
     borderColor: '#D7D8D6',
+   
+    
   },
   header: {
     fontSize: `${sizes.sm}`,
@@ -52,6 +53,26 @@ const styles = StyleSheet.create({
     fontSize: `${sizes.xs}`,
     marginBottom: `${sizes.md}`,
   },
+  container: {
+    flexDirection: 'row',
+    width: '100%',
+    marginBottom: `${sizes.md}`,
+    marginTop: `${sizes.md}`,
+    paddingLeft: 50,
+    paddingRight: 50,
+  },
+      leftColumn: {
+        flexDirection: 'column',
+        backgroundColor: 'yellow',
+        width: '50%',
+        paddingLeft: 50,
+      },
+      rightColumn: {
+        flexDirection: 'column',
+        backgroundColor: 'black',
+        width: '50%',
+        paddingRight: 50,
+      },
   image: {
     marginBottom: `${sizes.lg}`,
     height: 'auto',
@@ -82,10 +103,17 @@ const PDFDocument = ({image}) => {
           <Text style={styles.athlete}>{athlete}</Text>
           <Text style={styles.text2}>Your effort will now help Earth complete in the ultimate match.</Text>
           <Text style={styles.text3}>Sincerely, thank you.</Text>
-          <Image style={styles.signature} src={Signature.src} />
+          <View style={styles.container}>
+            <View style={styles.leftColumn}>
+              <Image style={styles.signature} src={Signature.src} />
+            </View>
+            <View style={styles.rightColumn}>
+              <Image style={styles.signature} src={Signature.src} />
+            </View>
+          </View>
           <Text>..............................................................................................................</Text>
           <Image style={styles.image} src={Banner.src} />
-        </View>   
+        </View>
       </Page>
     </Document>
   )

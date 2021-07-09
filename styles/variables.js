@@ -74,12 +74,4 @@ const font = {
   },
 }
 
-  const pdf = {
-    spacing: {
-      sm: 15,
-      md: 35,
-      lg: 45,
-    }
-  }
-
-export { breakpoints, colors, coverImage, easing, font, sizes, transitions, pdf }
+export { breakpoints, colors, coverImage, easing, font, sizes, transitions }
